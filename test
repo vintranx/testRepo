@@ -5,3 +5,4 @@ this is edit from test branch to do merge pull request to merge in the main
 this is new commit
 this is another new commit
 this is new test
+this is test when trigger cause pipeline to Detect Change - false
