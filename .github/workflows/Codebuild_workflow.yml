@@ -9,4 +9,4 @@ jobs:
       - run: pwd
       - run: uname -r 
       - run: codebuild-breakpoint
-      - run: echo "this should be executed from the Codebuild test reserve capacity fleet"
+      - run: echo "this should be executed from the  Codebuild test reserve capacity fleet"
