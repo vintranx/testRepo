@@ -6,7 +6,7 @@ jobs:
     steps:
       - run: curl -i https://www.google.com          
       - run: curl -i https://api.github.com.       
-      - run: echo "Hello World!" 
+      - run: echo "Hello World!"   
       - run: printenv. 
       - run: pwd  
       - run: uname -r     
