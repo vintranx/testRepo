@@ -9,5 +9,5 @@ jobs:
       - run: echo "Hello World!" 
       - run: printenv. 
       - run: pwd  
-      - run: uname -r   
+      - run: uname -r     
       - run: echo "this should be executed from the  Codebuild test reserve capacity fleet"
