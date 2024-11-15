@@ -3,7 +3,7 @@ on: [push]
 jobs:
   Hello-World-Job:
     runs-on: codebuild-github_Action_demo-${{ github.run_id }}-${{ github.run_attempt }}
-    steps:
+    steps: 
       - run: curl -i https://www.google.com            
       - run: curl -i https://api.github.com.         
       - run: echo "Hello World!"   
