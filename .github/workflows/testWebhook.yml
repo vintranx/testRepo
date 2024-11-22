@@ -6,5 +6,6 @@ jobs:
       - codebuild-testWebhook-${{ github.run_id }}-${{ github.run_attempt }}
       - image:arm-3.0
       - instance-size:medium
+      - buildspec-override:true
     steps:
       - run: echo "Hello World!" 
