@@ -12,6 +12,7 @@ concurrency:
 jobs:
   deploy_dev:
     name: job01_deploy_dev
+    environment: dev
     runs-on:
       - codebuild-testWebhook-${{ github.run_id }}-${{ github.run_attempt }}
       - buildspec-override:true
@@ -19,6 +20,7 @@ jobs:
       - run: echo "Hello World 01!" 
   deploy_prod:
     name: job02_deploy_prod
+    environment: prod
     runs-on:
       - codebuild-testWebhook-${{ github.run_id }}-${{ github.run_attempt }}
       - buildspec-override:true
