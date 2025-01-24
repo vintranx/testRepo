@@ -1,5 +1,9 @@
 name: Test webhook workflow
-on: [push]
+on:
+  release:
+    types:
+      - published
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}
