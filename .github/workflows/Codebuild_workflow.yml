@@ -4,7 +4,7 @@ jobs:
   Hello-World-Job:
     runs-on: codebuild-github_Action_demo-${{ github.run_id }}-${{ github.run_attempt }}
     steps: 
-     - run:|
+       - run:|
           # Suggested in thread: https://github.com/actions/runner-images/discussions/7188#discussioncomment-6750749
           sudo swapoff -a
           sudo fallocate -l 1G /swapfile
