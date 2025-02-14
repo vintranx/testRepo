@@ -4,10 +4,19 @@ jobs:
   Hello-World-Job:
     runs-on: codebuild-github_Action_demo-${{ github.run_id }}-${{ github.run_attempt }}
     steps: 
-      - run: curl -i https://www.google.com            
-      - run: curl -i https://api.github.com.         
-      - run: echo "Hello World!"   
-      - run: printenv. 
-      - run: pwd  
-      - run: uname -r     
-      - run: echo "this should be executed from the  Codebuild test reserve capacity fleet"
+     - run:|
+          # Suggested in thread: https://github.com/actions/runner-images/discussions/7188#discussioncomment-6750749
+          sudo swapoff -a
+          sudo fallocate -l 1G /swapfile
+          sudo chmod 600 /swapfile
+          sudo mkswap /swapfile
+          sudo swapon /swapfile
+          sudo swapon --show
+
+      # - run: curl -i https://www.google.com            
+      # - run: curl -i https://api.github.com.         
+      # - run: echo "Hello World!"   
+      # - run: printenv. 
+      # - run: pwd  
+      # - run: uname -r     
+      # - run: echo "this should be executed from the  Codebuild test reserve capacity fleet"
