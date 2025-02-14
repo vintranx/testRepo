@@ -5,14 +5,12 @@ jobs:
     runs-on: codebuild-github_Action_demo-${{ github.run_id }}-${{ github.run_attempt }}
     # Suggested in thread: https://github.com/actions/runner-images/discussions/7188#discussioncomment-6750749
     steps: 
-       - name: Increase swapfile
-          run:|
-           sudo swapoff -a
-           sudo fallocate -l 10M /swapfile
-           sudo chmod 600 /swapfile
-           sudo mkswap /swapfile
-           sudo swapon /swapfile
-           sudo swapon --show
+     - run: sudo swapoff -a
+     - run: sudo fallocate -l 10M /swapfile
+     - run: sudo chmod 600 /swapfile
+     - run: sudo mkswap /swapfile
+     - run: sudo swapon /swapfile
+     - run: sudo swapon --show
 
       # - run: curl -i https://www.google.com            
       # - run: curl -i https://api.github.com.         
