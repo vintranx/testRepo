@@ -3,15 +3,16 @@ on: [push]
 jobs:
   Hello-World-Job:
     runs-on: codebuild-github_Action_demo-${{ github.run_id }}-${{ github.run_attempt }}
+    # Suggested in thread: https://github.com/actions/runner-images/discussions/7188#discussioncomment-6750749
     steps: 
-       - run:|
-          # Suggested in thread: https://github.com/actions/runner-images/discussions/7188#discussioncomment-6750749
-          sudo swapoff -a
-          sudo fallocate -l 1G /swapfile
-          sudo chmod 600 /swapfile
-          sudo mkswap /swapfile
-          sudo swapon /swapfile
-          sudo swapon --show
+       - name: Increase swapfile
+          run:|
+           sudo swapoff -a
+           sudo fallocate -l 10M /swapfile
+           sudo chmod 600 /swapfile
+           sudo mkswap /swapfile
+           sudo swapon /swapfile
+           sudo swapon --show
 
       # - run: curl -i https://www.google.com            
       # - run: curl -i https://api.github.com.         
