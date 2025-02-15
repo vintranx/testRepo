@@ -10,7 +10,7 @@ jobs:
      - run: sudo chmod 600 /swapfile
      - run: sudo mkswap /swapfile
      - run: sudo swapon /swapfile
-     - run: sudo swapon --show
+     - run: sudo swapon --show 
 
       # - run: curl -i https://www.google.com            
       # - run: curl -i https://api.github.com.         
