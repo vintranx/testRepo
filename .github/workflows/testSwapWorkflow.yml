@@ -6,3 +6,9 @@ jobs:
       - codebuild-githubSwapTesting-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
       - run: echo "Hello World"
+      - run: sudo swapoff -a
+      - run: sudo fallocate -l 10M /swapfile
+      - run: sudo chmod 600 /swapfile
+      - run: sudo mkswap /swapfile
+      - run: sudo swapon /swapfile
+      - run: sudo swapon --show 
