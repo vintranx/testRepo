@@ -1,0 +1,8 @@
+name: Hello World Sample Runner
+on: [push]
+jobs:
+  Hello-World-Job:
+    runs-on:
+      - codebuild-sampleRunner-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - run: echo "Hello World"
