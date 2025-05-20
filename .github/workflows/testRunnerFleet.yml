@@ -4,7 +4,8 @@ jobs:
   Hello-World-Job05:
     runs-on:
       - codebuild-testRunnerFleet-${{ github.run_id }}-${{ github.run_attempt }}
-      - image:custom-linux-753313986144.dkr.ecr.us-east-1.amazonaws.com/codebuildimages:vincent_AL2_4_0_image
+      # - image:custom-linux-753313986144.dkr.ecr.us-east-1.amazonaws.com/codebuildimages:vincent_AL2_4_0_image
+      # - instance-size:medium
       - fleet:testRunnerFleet
     steps:
       - run: echo "Hello World 02" 
