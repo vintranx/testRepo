@@ -1,8 +1,9 @@
 name: Hello World
 on: [push]
 jobs:
-  Hello-World-Job04:
+  Hello-World-Job05:
     runs-on:
       - codebuild-testRunnerFleet-${{ github.run_id }}-${{ github.run_attempt }}
+      - image:753313986144.dkr.ecr.us-east-1.amazonaws.com/codebuildimages:vincent_AL2_4_0_image
     steps:
       - run: echo "Hello World 02" 
