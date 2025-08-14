@@ -1,0 +1,16 @@
+Name: PR-Review-Test
+SchemaVersion: "1.0"
+
+Triggers:
+  - Type: PULLREQUEST
+    Events:
+      - OPEN
+      - REVISION
+
+Actions:
+  ReviewAction:
+    Identifier: aws/build@v1
+    Configuration:
+      Steps:
+        - Run: echo "Testing PR review"
+        - Run: echo "PR event triggered"
